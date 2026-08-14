@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Limto Media — Influencer Marketing for Coffee Brands in the GCC</title>
+<meta name="description" content="Limto Media sources and manages creators for coffee and modern beverage brands running influencer campaigns across the UAE, Saudi Arabia and the wider GCC." />
+<meta name="keywords" content="GCC influencer marketing agency, UAE influencer marketing, Saudi influencer marketing, coffee influencer marketing, creator campaigns GCC" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Limto Media — Influencer Marketing for Coffee Brands in the GCC" />
+<meta property="og:description" content="We source, coordinate and manage creators across the UAE and Saudi Arabia — from first outreach to final report." />
+<meta property="og:url" content="https://limtomedia.com" />
+<meta name="twitter:card" content="summary" />
+<meta name="theme-color" content="#f6f3ee" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --paper: #F6F3EE;
+    --panel: #ECE7DD;
+    --panel-2: #E3DDCF;
+    --ink: #15130F;
+    --ink-muted: #5B5347;
+    --ink-faint: #8B8474;
+    --line: #DBD4C6;
+    --line-strong: #C7BFAC;
+    --accent: #6E3B22;
+    --accent-soft: #6E3B221a;
+    --paper-rgb: 246,243,238;
+
+    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --fs-hero: clamp(2.75rem, 5.4vw + 1rem, 5.6rem);
+    --fs-h2: clamp(2.1rem, 3.2vw + 1rem, 3.6rem);
+    --fs-h3: clamp(1.35rem, 1vw + 1rem, 1.7rem);
+    --fs-lead: clamp(1.05rem, 0.5vw + 1rem, 1.3rem);
+    --fs-body: 1.05rem;
+    --fs-small: 0.9rem;
+    --fs-eyebrow: 0.78rem;
+
+    --container: 1240px;
+    --edge: clamp(1.25rem, 4vw, 3.5rem);
+    --section-y: clamp(4.5rem, 9vw, 8.5rem);
+
+    --radius: 2px;
+    --ease: cubic-bezier(.19,1,.22,1);
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper: #14120E;
+      --panel: #1C1913;
+      --panel-2: #241F17;
+      --ink: #F2EEE4;
+      --ink-muted: #B6AD9A;
+      --ink-faint: #7D7565;
+      --line: #322C21;
+      --line-strong: #423A2B;
+      --accent: #CC935F;
+      --accent-soft: #CC935F22;
+      --paper-rgb: 20,18,14;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #14120E;
+    --panel: #1C1913;
+    --panel-2: #241F17;
+    --ink: #F2EEE4;
+    --ink-muted: #B6AD9A;
+    --ink-faint: #7D7565;
+    --line: #322C21;
+    --line-strong: #423A2B;
+    --accent: #CC935F;
+    --accent-soft: #CC935F22;
+    --paper-rgb: 20,18,14;
+  }
+
+  /* ============ RESET / BASE ============ */
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-sans);
+    font-size:var(--fs-body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  h1,h2,h3,h4,p{ margin:0; text-wrap:balance; }
+  .container{ max-width:var(--container); margin-inline:auto; padding-inline:var(--edge); }
+  ::selection{ background:var(--accent); color:var(--paper); }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+  .eyebrow{
+    font-family:var(--font-sans);
+    font-size:var(--fs-eyebrow);
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-muted);
+    display:inline-flex;
+    align-items:center;
+    gap:0.6em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:0.4rem; height:0.4rem;
+    background:var(--accent);
+    display:inline-block;
+    flex-shrink:0;
+  }
+
+  .italic{ font-family:var(--font-display); font-style:italic; font-weight:400; }
+
+  /* ============ BUTTONS ============ */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    font-family:var(--font-sans);
+    font-weight:600;
+    font-size:0.95rem;
+    padding:0.95rem 1.7rem;
+    border-radius:var(--radius);
+    border:1px solid var(--ink);
+    text-decoration:none;
+    cursor:pointer;
+    transition:background 0.35s var(--ease), color 0.35s var(--ease), border-color .35s var(--ease), transform .25s var(--ease);
+    white-space:nowrap;
+  }
+  .btn-primary{ background:var(--ink); color:var(--paper); }
+  .btn-primary:hover{ background:var(--accent); border-color:var(--accent); }
+  .btn-ghost{ background:transparent; color:var(--ink); border-color:var(--line-strong); }
+  .btn-ghost:hover{ border-color:var(--ink); }
+  .link-arrow{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    font-weight:600; font-size:0.95rem; text-decoration:none; color:var(--ink);
+    border-bottom:1px solid var(--line-strong);
+    padding-bottom:2px;
+    transition:border-color .3s var(--ease), gap .3s var(--ease), color .3s var(--ease);
+  }
+  .link-arrow:hover{ border-color:var(--ink); gap:0.75rem; color:var(--accent); border-color: currentColor;}
+  .link-arrow svg{ width:1rem; height:1rem; transition:transform .3s var(--ease); }
+  .link-arrow:hover svg{ transform:translateX(3px); }
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(var(--paper-rgb),0.86);
+    backdrop-filter:blur(10px) saturate(1.1);
+    -webkit-backdrop-filter:blur(10px) saturate(1.1);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-block:1.05rem;
+  }
+  .logo{ display:flex; align-items:baseline; gap:0.45rem; text-decoration:none; color:var(--ink); }
+  .logo-limto{ font-family:var(--font-display); font-style:italic; font-weight:500; font-size:1.6rem; letter-spacing:0.01em; }
+  .logo-media{ font-family:var(--font-sans); font-weight:600; font-size:0.62rem; letter-spacing:0.24em; color:var(--ink-muted); text-transform:uppercase; }
+
+  .nav-links{ display:flex; align-items:center; gap:2.2rem; list-style:none; margin:0; padding:0; }
+  .nav-links a{ text-decoration:none; font-size:0.92rem; font-weight:500; color:var(--ink-muted); position:relative; padding-bottom:3px; transition:color .3s var(--ease); }
+  .nav-links a::after{ content:""; position:absolute; left:0; right:100%; bottom:-1px; height:1px; background:var(--ink); transition:right .35s var(--ease); }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-links a:hover::after{ right:0; }
+
+  .nav-right{ display:flex; align-items:center; gap:2.2rem; }
+  .nav-cta{ display:inline-flex; }
+  .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:0.4rem; color:var(--ink); }
+
+  .mobile-menu{
+    position:fixed; inset:0; z-index:99;
+    background:var(--paper);
+    display:flex; flex-direction:column;
+    padding: 6.5rem var(--edge) 3rem;
+    transform:translateY(-100%);
+    transition:transform .5s var(--ease);
+  }
+  .mobile-menu.open{ transform:translateY(0); }
+  .mobile-menu nav{ display:flex; flex-direction:column; gap:1.6rem; }
+  .mobile-menu a{ font-family:var(--font-sans); font-size:2rem; font-weight:600; text-decoration:none; color:var(--ink); }
+  .mobile-menu .btn{ margin-top:2.5rem; align-self:flex-start; }
+
+  /* ============ REVEAL ============ */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  .reveal-d1{ transition-delay:.08s; }
+  .reveal-d2{ transition-delay:.16s; }
+  .reveal-d3{ transition-delay:.24s; }
+  .reveal-d4{ transition-delay:.32s; }
+
+  /* ============ SECTION UTIL ============ */
+  section{ padding-block:var(--section-y); }
+  .section-panel{ background:var(--panel); }
+  .section-head{ max-width:44rem; margin-bottom:clamp(2.5rem,5vw,4.5rem); }
+  .section-head h2{ font-family:var(--font-sans); font-weight:700; font-size:var(--fs-h2); letter-spacing:-0.01em; line-height:1.08; }
+  .section-head p{ margin-top:1.1rem; font-size:var(--fs-lead); color:var(--ink-muted); max-width:38rem; }
+  .hairline{ border:none; border-top:1px solid var(--line); margin:0; }
+
+  /* ============ HERO ============ */
+  .hero{ padding-top:clamp(3.5rem,7vw,6rem); padding-bottom:clamp(3.5rem,6vw,6rem); }
+  .hero-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap:clamp(2.5rem,5vw,4rem); align-items:end; }
+  .hero-copy .eyebrow{ margin-bottom:1.6rem; }
+  .hero h1{
+    font-family:var(--font-sans);
+    font-weight:800;
+    font-size:var(--fs-hero);
+    line-height:0.98;
+    letter-spacing:-0.02em;
+    max-width:16ch;
+  }
+  .hero h1 em{ font-family:var(--font-display); font-style:italic; font-weight:500; color:var(--accent); }
+  .hero-lead{ margin-top:1.6rem; font-size:var(--fs-lead); color:var(--ink-muted); max-width:34rem; }
+  .hero-actions{ margin-top:2.3rem; display:flex; align-items:center; gap:2rem; flex-wrap:wrap; }
+
+  .hero-visual{ position:relative; }
+  .photo-slot{
+    position:relative;
+    aspect-ratio: 4/5;
+    width:100%;
+    border:1px solid var(--line-strong);
+    background:var(--panel);
+    overflow:hidden;
+  }
+  .photo-slot img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    filter:saturate(0.94) contrast(1.03);
+    transition:transform 1.4s var(--ease);
+  }
+  .photo-slot:hover img{ transform:scale(1.035); }
+  .photo-slot::after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.06) 0%, transparent 30%, transparent 65%, rgba(0,0,0,0.18) 100%);
+    pointer-events:none;
+  }
+
+  .marquee-strip{
+    margin-top:clamp(3rem,6vw,5rem);
+    border-top:1px solid var(--line);
+    padding-top:1.4rem;
+    display:flex; flex-wrap:wrap; gap:0.6rem 1.6rem;
+    font-size:var(--fs-small); color:var(--ink-faint); letter-spacing:0.02em;
+  }
+  .marquee-strip span{ white-space:nowrap; }
+
+  /* ============ VALUE SECTION ============ */
+  .value-top{ display:grid; grid-template-columns: 1fr 1fr; gap:3rem; align-items:start; }
+  .value-top h2{
+    font-family:var(--font-sans); font-weight:700; font-size:var(--fs-h2);
+    line-height:1.06; letter-spacing:-0.01em;
+  }
+  .value-top h2 .italic{ color:var(--accent); font-size:1.02em; }
+  .value-copy p{ color:var(--ink-muted); font-size:var(--fs-lead); }
+  .value-copy{ padding-top:0.4rem; }
+
+  .task-flow{
+    margin-top:clamp(3rem,6vw,4.5rem);
+    display:flex; flex-wrap:wrap;
+    border-top:1px solid var(--line);
+  }
+  .task-flow .task{
+    flex:1 1 150px;
+    padding:1.6rem 1.4rem 1.6rem 0;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .task-flow .task + .task{ border-left:1px solid var(--line); padding-left:1.4rem; }
+  .task .n{ font-family:var(--font-sans); font-size:0.75rem; color:var(--ink-faint); font-weight:600; font-variant-numeric:tabular-nums; }
+  .task .t{ margin-top:0.6rem; font-family:var(--font-display); font-style:italic; font-size:1.35rem; font-weight:500; }
+
+  /* ============ SERVICES ============ */
+  .service-row{
+    display:grid; grid-template-columns: 0.9fr 2fr;
+    gap:2rem;
+    padding-block:2.1rem;
+    border-top:1px solid var(--line);
+    align-items:baseline;
+    transition:padding-left .4s var(--ease), background .4s var(--ease);
+  }
+  .service-row:last-child{ border-bottom:1px solid var(--line); }
+  .service-row:hover{ background:var(--panel); padding-left:1rem; margin-left:-1rem; padding-right:1rem; }
+  .service-row h3{ font-family:var(--font-sans); font-weight:700; font-size:var(--fs-h3); letter-spacing:-0.01em; }
+  .service-row .sn{ font-family:var(--font-display); font-style:italic; color:var(--ink-faint); font-size:1.05rem; }
+  .service-row p{ color:var(--ink-muted); max-width:36rem; }
+  .service-text{ display:flex; flex-direction:column; gap:0.5rem; }
+
+  /* ============ PROCESS ============ */
+  .process-rail{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:0;
+    border-top:1px solid var(--line-strong);
+  }
+  .process-step{
+    padding:1.8rem 1.4rem 0 0;
+    border-right:1px solid var(--line);
+    position:relative;
+  }
+  .process-step:last-child{ border-right:none; }
+  .process-step::before{
+    content:"";
+    position:absolute; top:-1px; left:0; width:0%; height:2px; background:var(--accent);
+    transition:width .6s var(--ease);
+  }
+  .process-step.in::before{ width:100%; }
+  .process-step .pn{ font-family:var(--font-sans); font-weight:700; font-size:0.85rem; color:var(--accent); font-variant-numeric:tabular-nums; }
+  .process-step h3{ margin-top:0.9rem; font-family:var(--font-sans); font-weight:700; font-size:1.15rem; }
+  .process-step p{ margin-top:0.6rem; font-size:0.92rem; color:var(--ink-muted); }
+
+  @media (max-width: 860px){
+    .process-rail{ grid-template-columns:1fr; border-top:none; }
+    .process-step{ border-right:none; border-top:1px solid var(--line); padding:1.6rem 0 1.8rem; }
+    .process-step::before{ top:-1px; left:0; height:2px; width:0; }
+  }
+
+  /* ============ GCC SECTION ============ */
+  .gcc-wrap{ text-align:center; }
+  .gcc-pair{
+    display:flex; align-items:center; justify-content:center; gap:clamp(1rem,4vw,2.8rem);
+    flex-wrap:wrap;
+    margin-block:clamp(2.5rem,5vw,4rem);
+  }
+  .gcc-pair .place{
+    font-family:var(--font-sans); font-weight:800;
+    font-size:clamp(1.8rem,5vw,3.4rem);
+    letter-spacing:-0.01em;
+  }
+  .gcc-pair .connector{ width:clamp(40px,8vw,90px); height:1px; background:var(--line-strong); position:relative; flex-shrink:0; }
+  .gcc-pair .connector::before,.gcc-pair .connector::after{
+    content:""; position:absolute; top:50%; width:5px; height:5px; border-radius:50%; background:var(--accent); transform:translateY(-50%);
+  }
+  .gcc-pair .connector::before{ left:-2px; }
+  .gcc-pair .connector::after{ right:-2px; }
+  .gcc-note{ max-width:34rem; margin-inline:auto; color:var(--ink-muted); font-size:var(--fs-lead); }
+  .gcc-tags{ margin-top:2.2rem; display:flex; gap:0.9rem; justify-content:center; flex-wrap:wrap; }
+  .gcc-tags span{
+    font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600;
+    color:var(--ink-muted); border:1px solid var(--line-strong); padding:0.5rem 0.9rem;
+  }
+
+  /* ============ COFFEE SECTION ============ */
+  .coffee-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2.5rem,5vw,4rem); align-items:center; }
+  .coffee-copy h2{ font-family:var(--font-sans); font-weight:700; font-size:var(--fs-h2); letter-spacing:-0.01em; line-height:1.06; }
+  .coffee-copy h2 .italic{ color:var(--accent); }
+  .coffee-copy p{ margin-top:1.3rem; color:var(--ink-muted); font-size:var(--fs-lead); max-width:32rem; }
+  .coffee-cats{ margin-top:1.8rem; display:flex; flex-wrap:wrap; gap:0 0.9rem; font-size:0.92rem; color:var(--ink-faint); }
+  .coffee-cats span:not(:last-child)::after{ content:"·"; margin-left:0.9rem; color:var(--line-strong); }
+  .coffee-visual .photo-slot{ aspect-ratio:1/1; }
+
+  /* ============ WHY ============ */
+  .why-grid{ display:grid; grid-template-columns:1fr 1fr; gap: 0; border-top:1px solid var(--line); border-left:1px solid var(--line); }
+  .why-item{ border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:clamp(2rem,4vw,2.8rem); }
+  .why-item h3{ font-family:var(--font-display); font-style:italic; font-weight:500; font-size:1.5rem; }
+  .why-item p{ margin-top:0.8rem; color:var(--ink-muted); font-size:0.98rem; max-width:26rem; }
+
+  @media (max-width:700px){
+    .why-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ============ FINAL CTA + FORM ============ */
+  .cta-grid{ display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(3rem,6vw,5rem); align-items:start; }
+  .cta-copy h2{ font-family:var(--font-sans); font-weight:800; font-size:var(--fs-h2); letter-spacing:-0.015em; line-height:1.05; }
+  .cta-copy p{ margin-top:1.2rem; font-size:var(--fs-lead); color:var(--ink-muted); max-width:28rem; }
+  .cta-email{ margin-top:2.2rem; display:inline-block; }
+  .cta-email a{ font-family:var(--font-display); font-style:italic; font-size:1.3rem; text-decoration:none; border-bottom:1px solid var(--line-strong); }
+  .cta-email a:hover{ border-color:var(--accent); color:var(--accent); }
+
+  form.contact{ display:flex; flex-direction:column; gap:1.3rem; }
+  .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:1.3rem; }
+  .field{ display:flex; flex-direction:column; gap:0.55rem; }
+  .field label{ font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-muted); }
+  .field input, .field select, .field textarea{
+    font-family:var(--font-sans); font-size:1rem; color:var(--ink);
+    background:transparent; border:none; border-bottom:1px solid var(--line-strong);
+    padding:0.6rem 0.1rem; outline:none;
+    transition:border-color .3s var(--ease);
+  }
+  .field select{ appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235B5347' stroke-width='1.4' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right center; padding-right:1.2rem; }
+  .field textarea{ resize:vertical; min-height:5rem; font-family:var(--font-sans); }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--accent); }
+  .field input::placeholder, .field textarea::placeholder{ color:var(--ink-faint); }
+  form.contact .btn{ margin-top:0.6rem; align-self:flex-start; }
+  .form-note{ font-size:0.82rem; color:var(--ink-faint); }
+  .form-success{ display:none; padding:1.6rem; border:1px solid var(--line-strong); font-size:1rem; }
+  .form-success.show{ display:block; }
+  .form-success strong{ font-family:var(--font-display); font-style:italic; font-weight:500; }
+
+  @media (max-width:640px){
+    .field-row{ grid-template-columns:1fr; }
+  }
+
+  /* ============ FOOTER ============ */
+  footer{ border-top:1px solid var(--line); padding-block:clamp(2.5rem,5vw,3.5rem); }
+  .footer-grid{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; align-items:flex-start; }
+  .footer-nav{ display:flex; gap:1.8rem; flex-wrap:wrap; list-style:none; padding:0; margin:0; }
+  .footer-nav a{ text-decoration:none; color:var(--ink-muted); font-size:0.92rem; }
+  .footer-nav a:hover{ color:var(--ink); }
+  .footer-bottom{ margin-top:2.2rem; padding-top:1.6rem; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; font-size:0.82rem; color:var(--ink-faint); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 980px){
+    .nav-links{ display:none; }
+    .nav-cta{ display:none; }
+    .nav-toggle{ display:inline-flex; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero h1{ max-width:none; }
+    .value-top{ grid-template-columns:1fr; gap:1.5rem; }
+    .service-row{ grid-template-columns:1fr; gap:0.7rem; }
+    .coffee-grid{ grid-template-columns:1fr; }
+    .coffee-visual{ order:-1; }
+    .cta-grid{ grid-template-columns:1fr; }
+    .task-flow{ flex-direction:column; }
+    .task-flow .task + .task{ border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo" aria-label="Limto Media home">
+      <span class="logo-limto">Limto</span><span class="logo-media">Media</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-primary nav-cta">Start a Campaign</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 8h18M4 13h18M4 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="btn btn-primary">Start a Campaign</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy reveal in">
+          <p class="eyebrow">Influencer marketing — UAE &amp; Saudi Arabia</p>
+          <h1>Influencer campaigns for <em>coffee brands</em> across the GCC.</h1>
+          <p class="hero-lead">We source, contact and coordinate creators across the UAE and Saudi Arabia — from first outreach to final report.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Start a Campaign</a>
+            <a href="#process" class="link-arrow">See how it works
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual reveal reveal-d2 in">
+          <div class="photo-slot">
+            <img src="images/hero-coffee-pour.jpg" alt="Coffee being poured into a white ceramic mug on a wooden table" loading="eager" />
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee-strip reveal reveal-d3 in">
+        <span>Specialty coffee</span>
+        <span>Subscriptions</span>
+        <span>Capsules &amp; pods</span>
+        <span>Ready-to-drink</span>
+        <span>Concentrates</span>
+        <span>Gifting</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE / PROBLEM -->
+  <section id="about">
+    <div class="container">
+      <div class="value-top">
+        <h2 class="reveal in">You focus on the brand.<br>We handle the <span class="italic">creators</span>.</h2>
+        <div class="value-copy reveal reveal-d1 in">
+          <p>Brands can find creators on their own. What takes the time is everything after that — the messages, the follow-ups, the rates, the shipping, the deadlines. That's the part Limto takes off your plate.</p>
+        </div>
+      </div>
+
+      <div class="task-flow">
+        <div class="task reveal in"><span class="n">01</span><div class="t">Finding</div></div>
+        <div class="task reveal reveal-d1 in"><span class="n">02</span><div class="t">Contacting</div></div>
+        <div class="task reveal reveal-d2 in"><span class="n">03</span><div class="t">Negotiating</div></div>
+        <div class="task reveal reveal-d3 in"><span class="n">04</span><div class="t">Coordinating</div></div>
+        <div class="task reveal reveal-d4 in"><span class="n">05</span><div class="t">Reporting</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section-panel">
+    <div class="container">
+      <div class="section-head reveal in">
+        <p class="eyebrow">Services</p>
+        <h2>What we manage.</h2>
+        <p>Four parts of the process, run end to end so you're not managing dozens of separate conversations.</p>
+      </div>
+
+      <div class="services-list">
+        <div class="service-row reveal in">
+          <div class="service-text"><span class="sn">i.</span><h3>Creator Sourcing</h3></div>
+          <p>We find and vet creators who match the campaign — niche, geography, audience, content quality and brand fit.</p>
+        </div>
+        <div class="service-row reveal reveal-d1 in">
+          <div class="service-text"><span class="sn">ii.</span><h3>Outreach &amp; Negotiation</h3></div>
+          <p>We contact creators, manage follow-ups and availability, and agree on rates, requirements and deliverables.</p>
+        </div>
+        <div class="service-row reveal reveal-d2 in">
+          <div class="service-text"><span class="sn">iii.</span><h3>Campaign Coordination</h3></div>
+          <p>We run product seeding and paid collaborations from creator selection through to published content.</p>
+        </div>
+        <div class="service-row reveal reveal-d3 in">
+          <div class="service-text"><span class="sn">iv.</span><h3>Tracking &amp; Reporting</h3></div>
+          <p>We track participation, deadlines and deliverables, then organize the results into a clear report.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+      <div class="section-head reveal in">
+        <p class="eyebrow">Process</p>
+        <h2>How a campaign runs.</h2>
+        <p>The same five stages, whether it's a single seeding run or a paid collaboration.</p>
+      </div>
+
+      <div class="process-rail">
+        <div class="process-step reveal in"><span class="pn">01</span><h3>Brief</h3><p>We understand the brand, the objective, the market and what the campaign needs from creators.</p></div>
+        <div class="process-step reveal reveal-d1 in"><span class="pn">02</span><h3>Source</h3><p>We identify and vet creators who fit the product, the audience and the market.</p></div>
+        <div class="process-step reveal reveal-d2 in"><span class="pn">03</span><h3>Activate</h3><p>We handle outreach, negotiation and coordination with every creator involved.</p></div>
+        <div class="process-step reveal reveal-d3 in"><span class="pn">04</span><h3>Track</h3><p>We monitor deliverables, deadlines and creator activity as the campaign runs.</p></div>
+        <div class="process-step reveal reveal-d4 in"><span class="pn">05</span><h3>Report</h3><p>You get an organized summary of what ran, what was delivered, and what the content looked like.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GCC -->
+  <section class="section-panel">
+    <div class="container gcc-wrap">
+      <p class="eyebrow reveal in" style="justify-content:center;">Markets we cover</p>
+      <div class="gcc-pair reveal reveal-d1 in">
+        <span class="place">UAE</span>
+        <span class="connector" aria-hidden="true"></span>
+        <span class="place">Saudi Arabia</span>
+      </div>
+      <p class="gcc-note reveal reveal-d2 in">Campaigns can run across both markets, with room for language, creator style and audience to differ between them — and can extend further across the GCC as needed.</p>
+      <div class="gcc-tags reveal reveal-d3 in">
+        <span>Arabic-speaking creators</span>
+        <span>English-speaking creators</span>
+        <span>Cross-market campaigns</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COFFEE SPECIALIZATION -->
+  <section>
+    <div class="container coffee-grid">
+      <div class="coffee-copy reveal in">
+        <p class="eyebrow">Specialization</p>
+        <h2>We speak <span class="italic">coffee</span>.</h2>
+        <p>Limto works with coffee and modern beverage brands — specialty roasters, subscriptions, capsules, concentrates, ready-to-drink and gifting. Staying inside one category means every campaign is built around creators who genuinely fit the product.</p>
+        <div class="coffee-cats">
+          <span>Specialty</span><span>Subscriptions</span><span>Capsules</span><span>RTD</span><span>Concentrates</span><span>Gifting</span>
+        </div>
+      </div>
+      <div class="coffee-visual reveal reveal-d2 in">
+        <div class="photo-slot">
+          <img src="images/coffee-beans-flatlay.jpg" alt="Coffee beans and ground coffee laid out on a wooden board" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY LIMTO -->
+  <section class="section-panel">
+    <div class="container">
+      <div class="section-head reveal in">
+        <p class="eyebrow">Why Limto</p>
+        <h2>How we operate.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item reveal in">
+          <h3>Relevant over massive</h3>
+          <p>We care more about creator-brand fit than follower count on its own.</p>
+        </div>
+        <div class="why-item reveal reveal-d1 in">
+          <h3>Managed end-to-end</h3>
+          <p>One point of contact, instead of you managing dozens of creator conversations.</p>
+        </div>
+        <div class="why-item reveal reveal-d2 in">
+          <h3>GCC focused</h3>
+          <p>Campaigns designed around UAE and Saudi audiences, not adapted from elsewhere.</p>
+        </div>
+        <div class="why-item reveal reveal-d3 in">
+          <h3>Clear execution</h3>
+          <p>Organized communication, campaign tracking and reporting throughout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA / CONTACT -->
+  <section id="contact">
+    <div class="container cta-grid">
+      <div class="cta-copy reveal in">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Planning your next creator campaign?</h2>
+        <p>Tell us what you're launching and where you want to reach. We'll take it from there.</p>
+        <div class="cta-email">
+          <a href="mailto:hello@limtomedia.com">hello@limtomedia.com</a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d2 in">
+        <form class="contact" id="contactForm" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="email">Work email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="brand">Brand</label>
+              <input type="text" id="brand" name="brand" required />
+            </div>
+            <div class="field">
+              <label for="site">Website / Instagram</label>
+              <input type="text" id="site" name="site" placeholder="limtomedia.com" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="market">Target market</label>
+              <select id="market" name="market">
+                <option value="uae">UAE</option>
+                <option value="saudi">Saudi Arabia</option>
+                <option value="both">Both</option>
+                <option value="other-gcc">Other GCC</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="campaign">Looking to run</label>
+              <select id="campaign" name="campaign">
+                <option value="seeding">Product seeding</option>
+                <option value="paid">Paid collaboration</option>
+                <option value="both-types">Both</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="3" placeholder="A little about the brand and what you're planning."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Start a Campaign</button>
+          <p class="form-note">We reply from hello@limtomedia.com, usually within a couple of days.</p>
+          <div class="form-success" id="formSuccess"><strong>Thanks —</strong> your message is in. We'll be in touch shortly.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <a href="#top" class="logo">
+        <span class="logo-limto">Limto</span><span class="logo-media">Media</span>
+      </a>
+      <ul class="footer-nav">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Limto Media. UAE · Saudi Arabia · GCC.</span>
+      <span><a href="mailto:hello@limtomedia.com" style="text-decoration:none;">hello@limtomedia.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.innerHTML = isOpen
+      ? '<svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M6 6l14 14M20 6L6 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>'
+      : '<svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 8h18M4 13h18M4 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.innerHTML = '<svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 8h18M4 13h18M4 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+  }));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal, .process-step');
+  revealEls.forEach(el => el.classList.remove('in'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+  // Contact form (no backend wired up yet — shows local confirmation)
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    form.style.display = 'none';
+    success.classList.add('show');
+  });
+</script>
+
+</body>
+</html>
